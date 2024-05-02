@@ -17,7 +17,7 @@ import numpy as np
 
 
 # Read content inside the file
-with open('A071-03f.dat', 'r') as file:
+with open('Data/A071-03f.dat', 'r') as file:
     data_content = file.read()
 
 # Split the content into lines

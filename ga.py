@@ -1,8 +1,8 @@
-from selection import fps
-from xo import single_point_xo
-from mutation import mutation_operator
-from charles import Population, Individual
-from data import dimension, np_edge_weight_section, np_demand_section, capacity
+from Algorithms.selection import fps
+from Algorithms.xo import single_point_xo
+from Algorithms.mutation import mutation_operator
+from Algorithms.charles import Population, Individual
+from Data.data import dimension, np_edge_weight_section, np_demand_section, capacity
 from random import uniform, random
 from operator import attrgetter
 import copy
