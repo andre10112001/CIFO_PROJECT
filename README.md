@@ -14,6 +14,7 @@ Genetic algorithms are a type of optimization algorithm inspired by the process 
 - **Selection Method**: Roulette Wheel Selection
 - **Crossover Method**: Single-Point Crossover
 - **Mutation Method**: Inversion Mutation (With a slight variation)
+![Animated GIF](Images/gif_1.gif)
 
 ### Solution 2
 - **TO DO**
