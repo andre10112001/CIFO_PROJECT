@@ -11,10 +11,15 @@ Genetic algorithms are a type of optimization algorithm inspired by the process 
 ## Genetic Algorithm Schema for Each Solution
 
 ### Solution 1
-- **Selection Method**: Roulette Wheel Selection
-- **Crossover Method**: Single-Point Crossover
+- **Selection Method**: Roulette Wheel Selection (TODO)
+- **Crossover Method**: Single-Point Crossover (TODO)
 - **Mutation Method**: Inversion Mutation (With a slight variation)
-![Animated GIF](Images/gif_1.gif)
+For the mutation method in Solution 1, we utilize a variation of the inversion mutation technique. Instead of inverting a contiguous subset of the individual's representation, we select two random values (genes) within the individual and swap their positions. This process is repeated `n` times, where `n` is a parameter of the mutation function.
+
+This mutation approach introduces diversity into the population by randomly altering pairs of genes within individuals, potentially exploring new regions of the solution space.
+
+#### Mutation GIF Illustration
+![Mutation Animation](Images/gif_1.gif)
 
 ### Solution 2
 - **TO DO**
