@@ -31,6 +31,8 @@ Individual.get_neighbours = get_neighbours
 
 P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetition=False)
 
+## Solution 1 
+
 P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
          xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
 
@@ -43,3 +45,6 @@ path_1, path_2, path_3 = see_paths(min_individual.representation)
 print("Path 1:", path_1)
 print("Path 2:", path_2)
 print("Path 3:", path_3)
+
+## Solution 2
+# CODE HERE 
