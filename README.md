@@ -19,7 +19,6 @@ For the mutation method in Solution 1, we utilize a variation of the inversion m
 
 This mutation approach introduces diversity into the population by randomly altering pairs of genes within individuals, potentially exploring new regions of the solution space.
 
-#### Mutation GIF Illustration
 ![Mutation Animation](Images/gif_1.gif)
 
 ### Solution 2
