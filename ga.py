@@ -33,7 +33,7 @@ P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetit
 
 ## Solution 1 
 
-P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
+P.evolve(gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,
          xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
 
 min_individual = P.get_best_individual()
