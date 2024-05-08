@@ -35,15 +35,15 @@ def get_load(path_1, path_2, path_3):
     load_3 = 0
     for node in path_1:
         for element in demand_list:
-            if element[0] == node:
+            if element[0] == (node + 1) :
                 load_1 += element[1]
     for node in path_2:
         for element in demand_list:
-            if element[0] == node:
+            if element[0] == (node + 1):
                 load_2 += element[1]
     for node in path_3:
         for element in demand_list:
-            if element[0] == node:
+            if element[0] == (node + 1):
                 load_3 += element[1]
     return load_1, load_2, load_3
 

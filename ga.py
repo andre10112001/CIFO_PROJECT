@@ -29,11 +29,11 @@ def get_neighbours(self):
 Individual.get_fitness = get_fitness
 Individual.get_neighbours = get_neighbours
 
-P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetition=False)
-
 ## Solution 1 
 
-P.evolve(gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,
+""" P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetition=False)
+
+P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
          xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
 
 min_individual = P.get_best_individual()
@@ -41,10 +41,52 @@ min_individual = P.get_best_individual()
 print(min_individual.fitness)
 
 path_1, path_2, path_3 = see_paths(min_individual.representation)
+load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
 
+print("Load 1:", load_1)
 print("Path 1:", path_1)
+print("Load 1:", load_2)
 print("Path 2:", path_2)
-print("Path 3:", path_3)
+print("Load 1:", load_3)
+print("Path 3:", path_3) """
+
+
+# Define a list to store the results
+results = []
+
+# Define the number of iterations (n)
+n = 10  # Change this to the desired number of iterations
+
+# Loop through the evolutionary process 'n' times
+for _ in range(n):
+    # Initialize and evolve the population
+    P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetition=False)
+    P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
+             xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
+    
+    # Get the best individual after evolution
+    min_individual = P.get_best_individual()
+    
+    # Extract representation, fitness, and paths/load information
+    representation = min_individual.representation
+    fitness = min_individual.fitness
+    
+    path_1, path_2, path_3 = see_paths(representation)
+    load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
+    
+    # Store the results in a tuple and append to the results list
+    result = (representation, fitness, load_1, load_2, load_3)
+    results.append(result)
+
+# Print all results collected
+for i, result in enumerate(results):
+    print(f"Iteration {i+1}:")
+    #print("Representation:", result[0])
+    print("Fitness:", result[1])
+    print("Load 1:", result[2])
+    print("Load 2:", result[3])
+    print("Load 3:", result[4])
+    print()
 
 ## Solution 2
 # CODE HERE 
