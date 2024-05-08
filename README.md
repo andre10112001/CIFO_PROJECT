@@ -26,18 +26,14 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ## Genetic Algorithm Schema for Each Solution
 
 ### **Solution 1**
-### Selection Method: Roulette Wheel Selection
-In our case, the selection process for crossover operates similarly to the maximization scenario, where higher fitness values correspond to a higher probability of selection. However, since our problem involves minimization (aiming to minimize the fitness function), we invert the fitness values. This means that we use the inverted fitness values for the roulette wheel selection mechanism.
-
-To clarify, by inverting the fitness values, we essentially turn higher fitness (lower cost or distance in our case) into lower values and vice versa. This inverted fitness value is then utilized in the roulette wheel selection to guide the probability of selecting individuals for crossover, prioritizing solutions with lower fitness (cost) values. This adjustment ensures that our selection process aligns with the objective of minimizing the total distance traveled by the trucks.
-
-### Crossover Method: Single-Point Crossover
-The crossover operator used in this solution is a basic single-point crossover method. This technique involves taking two parent solutions, dividing them into sections at a random point, and then swapping these sections between the parents to create new offspring. It's important to note that this crossover method is implemented without any additional adjustments or modifications.
-### Mutation Method: Inversion Mutation (With a slight variation)
-
-For the mutation method in Solution 1, we utilize a variation of the inversion mutation technique. Instead of inverting a contiguous subset of the individual's representation, we select two random values (genes) within the individual and swap their positions. This process is repeated `n` times, where `n` is a parameter of the mutation function.
-
-This mutation approach introduces diversity into the population by randomly altering pairs of genes within individuals, potentially exploring new regions of the solution space.
+- **Selection Method:** Roulette Wheel Selection with Fitness Inversion
+  - Higher fitness (lower total distance) results in a lower value (after inversion), increasing the probability of selection.
+  
+- **Crossover Method:** Single-Point Crossover
+  - Basic crossover technique involving splitting two parent solutions at a random point and swapping sections to create new offspring.
+  
+- **Mutation Method:** Inversion Mutation with Random Gene Swaps
+  - Instead of inverting contiguous subsets, two random genes within an individual are swapped `n` times to introduce diversity.
 
 ![Mutation Animation](Images/gif_1.gif)
 
