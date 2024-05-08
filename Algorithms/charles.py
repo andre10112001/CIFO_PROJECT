@@ -1,5 +1,5 @@
 from operator import attrgetter
-from random import choice,random, uniform
+from random import choice, random, uniform
 from copy import copy
 
 
@@ -61,6 +61,7 @@ class Population:
                     repetition=kwargs["repetition"]
                 )
             )
+
     def evolve(self, gens, xo_prob, mut_prob, select, xo, mutate, elitism):
         # gens = 100
         for i in range(gens):
@@ -98,12 +99,13 @@ class Population:
                 print(f"Best individual of gen #{i + 1}: {max(self, key=attrgetter('fitness'))}")
             elif self.optim == "min":
                 print(f"Best individual of gen #{i + 1}: {min(self, key=attrgetter('fitness'))}")
+
     def __len__(self):
         return len(self.individuals)
 
     def __getitem__(self, position):
         return self.individuals[position]
-    
+
     def get_best_individual(self):
         if self.optim == "min":
             min = 1000000000
@@ -121,4 +123,3 @@ class Population:
                     max_individual = individual
                     max = fitness
             return max_individual
-        
