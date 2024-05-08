@@ -37,7 +37,7 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 
 ## Genetic Algorithm Schema for Each Solution
 
-### **Solution 1**
+### **Solution 1** (gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
 - **Selection Method:** Roulette Wheel Selection with Fitness Inversion
   - Higher fitness (lower total distance) results in a lower value (after inversion), increasing the probability of selection.
   
