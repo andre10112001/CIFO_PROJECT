@@ -13,7 +13,7 @@ In our problem, we are dealing with three trucks and 71 nodes to visit. Our repr
 
 To determine the sequence of nodes for each truck's path, we sort the nodes in ascending order based on their assigned values in the array. This sorting process allows us to understand the sequence of nodes that each truck will visit.
 
-To enhance clarity regarding this approach, please refer to the accompanying GIF demonstration (using an example with 8 nodes). 
+To enhance clarity regarding this approach, please refer to the accompanying GIF demonstration (using an example with 9 nodes where the 9th node is the depot node). 
 
 ![Representation Animation](Images/gif_2.gif)
 
