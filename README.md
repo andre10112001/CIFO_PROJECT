@@ -17,11 +17,22 @@ To enhance clarity regarding this approach, please refer to the accompanying GIF
 
 ![Representation Animation](Images/gif_2.gif)
 
+## Fitness
+
+The fitness of our solution is determined by the total distance traveled by the three trucks from the moment they depart the depot until they complete their routes. It's crucial to mention that if any truck exceeds its capacity limit, we apply a penalty to the solution. This penalty involves multiplying the fitness value by 10,000.
+
+In summary, our fitness metric evaluates the combined travel distance of all trucks, with a penalty imposed if any truck exceeds its capacity threshold. This approach ensures that our solution adheres to both distance efficiency and capacity constraints.
+
 ## Genetic Algorithm Schema for Each Solution
 
 ### **Solution 1**
-### Selection Method: Roulette Wheel Selection (TODO)
-### Crossover Method: Single-Point Crossover (TODO)
+### Selection Method: Roulette Wheel Selection
+In our case, the selection process for crossover operates similarly to the maximization scenario, where higher fitness values correspond to a higher probability of selection. However, since our problem involves minimization (aiming to minimize the fitness function), we invert the fitness values. This means that we use the inverted fitness values for the roulette wheel selection mechanism.
+
+To clarify, by inverting the fitness values, we essentially turn higher fitness (lower cost or distance in our case) into lower values and vice versa. This inverted fitness value is then utilized in the roulette wheel selection to guide the probability of selecting individuals for crossover, prioritizing solutions with lower fitness (cost) values. This adjustment ensures that our selection process aligns with the objective of minimizing the total distance traveled by the trucks.
+
+### Crossover Method: Single-Point Crossover
+The crossover operator used in this solution is a basic single-point crossover method. This technique involves taking two parent solutions, dividing them into sections at a random point, and then swapping these sections between the parents to create new offspring. It's important to note that this crossover method is implemented without any additional adjustments or modifications.
 ### Mutation Method: Inversion Mutation (With a slight variation)
 
 For the mutation method in Solution 1, we utilize a variation of the inversion mutation technique. Instead of inverting a contiguous subset of the individual's representation, we select two random values (genes) within the individual and swap their positions. This process is repeated `n` times, where `n` is a parameter of the mutation function.
