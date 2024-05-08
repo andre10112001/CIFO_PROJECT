@@ -8,6 +8,15 @@ The Asymmetric Capacitated Vehicle Routing Problem (ACVRP) involves optimizing t
 ## Genetic Algorithms
 Genetic algorithms are a type of optimization algorithm inspired by the process of natural selection and genetics. They use a population of candidate solutions (individuals) that evolve over generations through selection, crossover (recombination), and mutation.
 
+## Representation
+In our problem, we are dealing with three trucks and 71 nodes to visit. Our representation involves a 70-element array (as the depot node does not need to be included in the solution representation), where each element is assigned a value between 0 and 2.99. The values between 0 and 1 correspond to truck 1, values between 1 and 2 correspond to truck 2, and values between 2 and 3 correspond to truck 3.
+
+To determine the sequence of nodes for each truck's path, we sort the nodes in ascending order based on their assigned values in the array. This sorting process allows us to understand the sequence of nodes that each truck will visit.
+
+To enhance clarity regarding this approach, please refer to the accompanying GIF demonstration (using an example with 8 nodes). 
+
+![Representation Animation](Images/gif_2.gif)
+
 ## Genetic Algorithm Schema for Each Solution
 
 ### **Solution 1**
