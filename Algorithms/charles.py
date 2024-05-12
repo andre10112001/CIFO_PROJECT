@@ -64,6 +64,7 @@ class Population:
 
     def evolve(self, gens, xo_prob, mut_prob, select, xo, mutate, elitism):
         # gens = 100
+        history = []
         for i in range(gens):
             new_pop = []
 
@@ -96,9 +97,13 @@ class Population:
 
             self.individuals = new_pop
             if self.optim == "max":
-                print(f"Best individual of gen #{i + 1}: {max(self, key=attrgetter('fitness'))}")
+                #print(f"Best individual of gen #{i + 1}: {max(self, key=attrgetter('fitness'))}")
+                pass
             elif self.optim == "min":
-                print(f"Best individual of gen #{i + 1}: {min(self, key=attrgetter('fitness'))}")
+                #print(f"Best individual of gen #{i + 1}: {min(self, key=attrgetter('fitness'))}")
+                history.append((i+1, self.get_best_individual().fitness))
+                pass
+        return history
 
     def __len__(self):
         return len(self.individuals)

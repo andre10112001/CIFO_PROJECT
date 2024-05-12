@@ -1,9 +1,9 @@
 from Algorithms.selection import fps
 from Algorithms.xo import single_point_xo
-from Algorithms.mutation import swap_mutator
+from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator
 from Algorithms.charles import Population, Individual
 from Data.data import dimension, np_edge_weight_section, np_demand_section, capacity
-from utils import get_load, get_path, see_paths
+from utils import get_load, get_path, see_paths, run_n_times, plot_evolution_history, plot_fitness_boxplots
 
 distance_matrix = np_edge_weight_section.copy()
 demand_list = np_demand_section.copy()
@@ -30,63 +30,48 @@ def get_neighbours(self):
 Individual.get_fitness = get_fitness
 Individual.get_neighbours = get_neighbours
 
+##################################################
 # Solution 1
+##################################################
 
-""" P = Population(10, "min", sol_size=dimension-1, valid_set=[0, 2.999999], repetition=False)
+# Run this solutions n times
+print("Running: SOLUTION 1")
 
-P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
-         xo=single_point_xo, mutate=swap_mutator, elitism=True)
+# results = ([run_1, run_2, ..., run_n])
+# run_i = [(best_representaion_i, best_fitness_i, load_i_1, load_i_2, load_i_3, history_i)]
+# history_i = [(gen_1, fitness_1), (gen_2, fitness_2), ..., (gen_l, fitness_l)]
+results_1 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, 
+                      xo=single_point_xo, mutate=swap_mutator, n=30)
 
-min_individual = P.get_best_individual()
-
-print(min_individual.fitness)
-
-path_1, path_2, path_3 = see_paths(min_individual.representation)
-load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
-
-print("Load 1:", load_1)
-print("Path 1:", path_1)
-print("Load 1:", load_2)
-print("Path 2:", path_2)
-print("Load 1:", load_3)
-print("Path 3:", path_3) """
-
-# Define a list to store the results
-results = []
-
-# Define the number of iterations (n)
-n = 10  # Change this to the desired number of iterations
-
-# Loop through the evolutionary process 'n' times
-for _ in range(n):
-    # Initialize and evolve the population
-    P = Population(10, "min", sol_size=dimension - 1, valid_set=[0, 2.999999], repetition=False)
-    P.evolve(gens=100, xo_prob=0.9, mut_prob=0.15, select=fps,
-             xo=single_point_xo, mutate=swap_mutator, elitism=True)
-
-    # Get the best individual after evolution
-    min_individual = P.get_best_individual()
-
-    # Extract representation, fitness, and paths/load information
-    representation = min_individual.representation
-    fitness = min_individual.fitness
-
-    path_1, path_2, path_3 = see_paths(representation)
-    load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
-
-    # Store the results in a tuple and append to the results list
-    result = (representation, fitness, load_1, load_2, load_3)
-    results.append(result)
-
-# Print all results collected
-for i, result in enumerate(results):
-    print(f"Iteration {i + 1}:")
-    # print("Representation:", result[0])
-    print("Fitness:", result[1])
-    print("Load 1:", result[2])
-    print("Load 2:", result[3])
-    print("Load 3:", result[4])
-    print()
-
+##################################################
 # Solution 2
-# CODE HERE
+##################################################
+print("Running: SOLUTION 2")
+
+results_2 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, 
+                      xo=single_point_xo, mutate=scramble_mutator, n=30)
+
+
+##################################################
+# Solution 3
+##################################################
+print("Running: SOLUTION 3")
+
+results_3 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, 
+                      xo=single_point_xo, mutate=random_reset_mutator, n=30)
+
+##################################################
+# PLOTS
+##################################################
+
+# Plotting the history of each run of solution 1
+plot_evolution_history(results_1)
+
+# Plotting the history of each run of solution 2
+plot_evolution_history(results_2)
+
+# Plotting the history of each run of solution 3
+plot_evolution_history(results_3)
+
+# Boxplot for each solution
+plot_fitness_boxplots(results_1 , results_2, results_3)
