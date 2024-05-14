@@ -1,4 +1,4 @@
-from Algorithms.selection import fps
+from Algorithms.selection import fps, ts
 from Algorithms.xo import single_point_xo
 from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator
 from Algorithms.charles import Population, Individual
@@ -48,7 +48,7 @@ results_1 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, selec
 ##################################################
 print("Running: SOLUTION 2")
 
-results_2 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, 
+results_2 = run_n_times(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=ts,
                       xo=single_point_xo, mutate=scramble_mutator, n=30)
 
 

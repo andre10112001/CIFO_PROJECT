@@ -52,7 +52,7 @@ def ts(population, n_participants=2):
         raise ValueError("Invalid optimization type specified (must be 'max' or 'min').")
 
     # Tournament participants
-    individuals = sample(population, n_participants)
+    individuals = sample(list(population), n_participants)
     fitness_values = list(map(optimization_map[population.optim], individuals))
 
     # Select the individual with the better fitness based on the optimization type
