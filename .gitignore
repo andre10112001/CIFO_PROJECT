@@ -1,3 +1,5 @@
 # Ignore Python bytecode files
 __pycache__/
 *.pyc
+/2024_CIFO_Project_Guidelines.pdf
+/crossover operators.pdf
