@@ -75,7 +75,7 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ### fps (Fitness Proportionate)
 TODO
 
-### ts (Tourname Selection)
+### ts (Tournament Selection)
 TODO
 
 
