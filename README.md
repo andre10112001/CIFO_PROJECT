@@ -57,3 +57,19 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ### Solution 4
 - **TO DO**
 
+## Selection Operators
+
+### fps (Fitness Proportionate)
+TODO
+
+### ts (Tourname Selection)
+TODO
+
+## Crossover operations
+
+### single_point_xo (Single Point Crossover)
+Single point crossover is a genetic algorithm technique where two parent solutions exchange segments at a randomly chosen point to create two new offspring, promoting genetic diversity. This method helps explore new solutions by combining different parts of the parents' genetic information.
+
+The following gif demonstrates a cycle of single point crossover:
+![single_point_xo Animation](Images/spxo.gif)
+
