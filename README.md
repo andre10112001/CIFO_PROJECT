@@ -73,7 +73,10 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ## Selection Operators
 
 ### fps (Fitness Proportionate)
-TODO
+Fitness proportionate selection for minimization involves selecting individuals based on the inverse of their fitness values, giving higher probability to those with lower fitness. The total inverse fitness is calculated, a random number is generated within this range, and individuals are iterated through until their cumulative inverse fitness exceeds this random number, selecting that individual.
+
+The following gif explains this process:
+![fps Animation](Images/fps.gif)
 
 ### ts (Tournament Selection)
 TODO
