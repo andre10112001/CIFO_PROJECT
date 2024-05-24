@@ -38,22 +38,70 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ## Genetic Algorithm Schema for Each Solution
 
 ### **Solution 1** 
-(gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
-- **Selection Method:** Roulette Wheel Selection with Fitness Inversion
-  - Higher fitness (lower total distance) results in a lower value (after inversion), increasing the probability of selection.
+(pop_size=10, gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
+
+- **Selection Method:** [fps](#fps-fitness-proportionate)
   
-- **Crossover Method:** Single-Point Crossover
-  - Basic crossover technique involving splitting two parent solutions at a random point and swapping sections to create new offspring.
+- **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
   
-- **Mutation Method:** Inversion Mutation with Random Gene Swaps
-  - Instead of inverting contiguous subsets, two random genes within an individual are swapped `n` times to introduce diversity.
+- **Mutation Method:** [swap_mutator](#swap_mutator)
+
+### Solution 2
+(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=ts, xo=single_point_xo, mutate=scramble_mutator, n=30)
+
+- **Selection Method:** [ts](#ts-tournament-selection)
+  
+- **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
+  
+- **Mutation Method:** [scramble_mutator](#scramble_mutator)
+
+### Solution 3
+(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, xo=single_point_xo, mutate=random_reset_mutator, n=30)
+
+- **Selection Method:** [fps](#fps-fitness-proportionate)
+  
+- **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
+  
+- **Mutation Method:** [random_reset_mutator](#random_reset_mutator)
+
+### Solution 4
+- **TO DO**
+
+
+***
+
+## Selection Operators
+
+### fps (Fitness Proportionate)
+TODO
+
+### ts (Tournament Selection)
+TODO
+
+
+***
+
+## Crossover Operators
+
+### single_point_xo (Single Point Crossover)
+Single point crossover is a genetic algorithm technique where two parent solutions exchange segments at a randomly chosen point to create two new offspring, promoting genetic diversity. This method helps explore new solutions by combining different parts of the parents' genetic information.
+
+The following gif demonstrates a cycle of single point crossover:
+![single_point_xo Animation](Images/spxo.gif)
+
+
+***
+
+## Mutation Operators
+
+### swap_mutator
+This function randomly selects pairs of indices within the chromosome and swaps the elements at those indices. The number of swaps performed is determined by the "n_loops". parameter.
 
 ![Mutation Animation](Images/gif_1.gif)
 
-### Solution 2
-- **TO DO**
-### Solution 3
-- **TO DO**
-### Solution 4
-- **TO DO**
+###  scramble_mutator
+TODO
+
+### random_reset_mutator
+TODO
 
