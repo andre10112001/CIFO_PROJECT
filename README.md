@@ -39,11 +39,11 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 
 ### **Solution 1** 
 (gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
-- **Selection Method:** fps
+- **Selection Method:** [fps](#fps-fitness-proportionate)
   
 - **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
   
-- **Mutation Method:** swap_mutator
+- **Mutation Method:** [swap_mutator](#swap_mutator)
 
 ### Solution 2
 - **TO DO**
