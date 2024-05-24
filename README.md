@@ -38,7 +38,8 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 ## Genetic Algorithm Schema for Each Solution
 
 ### **Solution 1** 
-(gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
+(pop_size=10, gens=1000, xo_prob=0.9, mut_prob=0.15, select=fps,xo=single_point_xo, mutate=variable_inversion_operator, elitism=True)
+
 - **Selection Method:** [fps](#fps-fitness-proportionate)
   
 - **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
@@ -46,9 +47,23 @@ In summary, our fitness metric evaluates the combined travel distance of all tru
 - **Mutation Method:** [swap_mutator](#swap_mutator)
 
 ### Solution 2
-- **TO DO**
+(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=ts, xo=single_point_xo, mutate=scramble_mutator, n=30)
+
+- **Selection Method:** [ts](#ts-tournament-selection)
+  
+- **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
+  
+- **Mutation Method:** [scramble_mutator](#scramble_mutator)
+
 ### Solution 3
-- **TO DO**
+(pop_size=10, gens=100, xo_prob=0.9, mut_prob=0.15, select=fps, xo=single_point_xo, mutate=random_reset_mutator, n=30)
+
+- **Selection Method:** [fps](#fps-fitness-proportionate)
+  
+- **Crossover Method:** [single_point_xo](#single_point_xo-single-point-crossover)
+  
+- **Mutation Method:** [random_reset_mutator](#random_reset_mutator)
+
 ### Solution 4
 - **TO DO**
 
