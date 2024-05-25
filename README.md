@@ -145,5 +145,8 @@ The following gif demonstrates a cycle of scramble mutator:
 ![scramble_mutator Animation](Images/scramble_mutator.gif)
 
 ### random_reset_mutator
-TODO
+The random_reset_mutator function mutates an individual's chromosome by randomly selecting elements and assigning them new random values within the range [0, 2.999999]. The number of elements to reset is determined by the n_loops parameter. This mutation introduces variability by replacing specific elements with new random values, aiding the exploration of diverse solutions in evolutionary algorithms.
+
+The following gif demonstrates a cycle of random reset mutator:
+![scramble_mutator Animation](Images/random_reset_mutator.gif)
 
