@@ -95,6 +95,8 @@ Single point crossover is a genetic algorithm technique where two parent solutio
 The following gif demonstrates a cycle of single point crossover:
 ![single_point_xo Animation](Images/spxo.gif)
 
+### multi_point_xo (Multi Point Crossover)
+TODO
 
 ***
 
