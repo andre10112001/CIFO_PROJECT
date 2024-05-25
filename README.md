@@ -139,7 +139,10 @@ This function randomly selects pairs of indices within the chromosome and swaps 
 ![Mutation Animation](Images/gif_1.gif)
 
 ###  scramble_mutator
-TODO
+The scramble_mutator function randomly selects a subset of elements from an individual's chromosome, starting from a random index. It then shuffles this subset in place, introducing a random permutation of elements within the chromosome. This mutation helps maintain genetic diversity by exploring new combinations of genes, crucial for evolutionary algorithms to search for optimal solutions.
+
+The following gif demonstrates a cycle of scramble mutator:
+![scramble_mutator Animation](Images/scramble_mutator.gif)
 
 ### random_reset_mutator
 TODO
