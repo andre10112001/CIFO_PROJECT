@@ -18,7 +18,7 @@ def single_point_xo(parent1, parent2):
     return offspring1, offspring2
 
 
-def multi_point_xo(parent1, parent2, n):
+def multi_point_xo(parent1, parent2, n=2):
     """
     Implementation of multipoint crossover.
 

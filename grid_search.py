@@ -23,7 +23,9 @@ class GridSearch:
         param_combinations = list(itertools.product(*self.param_grid.values()))
         total_combinations = len(param_combinations)
 
+        print("")
         print(f"Total combinations: {total_combinations}")
+        print("")
 
         for i, combination in enumerate(tqdm(param_combinations, desc="Grid Search Progress")):
             start_time = time.time()
@@ -36,9 +38,11 @@ class GridSearch:
             # Calculate average fitness for this combination
             fitness_values = [result[1] for result in results]
             mean_fitness = statistics.mean(fitness_values)
-            print()
-            print(f"Average fitness for combination {i+1}: {mean_fitness}")
 
+            print("")
+            print(f"Average fitness for combination {i+1}: {mean_fitness}")
+            print("")
+            
             self.results.append({
                 'params': readable_params,
                 'results': results,
