@@ -1,6 +1,11 @@
+<div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
+
 # CIFO_PROJECT
 
 In this project, we are solving an Asymmetric Capacitated Vehicle Routing Problem (ACVRP) using genetic algorithms. We have implemented several variations of solutions by modifying the selection process, mutation, and crossover techniques.
+
+
+</div>
 
 ***
 
