@@ -1,4 +1,4 @@
-<div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
+<div style="background-color: #eaf7ff; padding: 20px; border-radius: 5px;">
 
 # CIFO_PROJECT
 
