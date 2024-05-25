@@ -79,7 +79,10 @@ The following gif explains this process:
 ![fps Animation](Images/fps.gif)
 
 ### ts (Tournament Selection)
-TODO
+In a tournament selection process, a specified number of individuals are randomly chosen from the population to compete. The fitness values of these participants are compared based on the optimization criterion (e.g., maximizing or minimizing fitness). The individual with the best fitness value according to this criterion is selected as the winner. This method helps in selecting strong individuals while maintaining diversity within the population.
+
+The following gif explains this process:
+![ts Animation](Images/ts.gif)
 
 
 ***
