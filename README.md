@@ -96,7 +96,13 @@ The following gif demonstrates a cycle of single point crossover:
 ![single_point_xo Animation](Images/spxo.gif)
 
 ### multi_point_xo (Multi Point Crossover)
-Similar to the [single_point_xo](#single_point_xo-single-point-crossover) Crossover shown above, but instead of a single crossover point, we have "n" crossover points, where "n" is a user-defined parameter.
+Similar to the [single_point_xo](#single_point_xo-single-point-crossover) shown above, but instead of a single crossover point, we have "n" crossover points, where "n" is a user-defined parameter.
+
+### multi_point_xo (Multi Point Crossover)
+
+### uniform_xo (Uniform Crossover)
+TODO
+
 ***
 
 ## Mutation Operators
