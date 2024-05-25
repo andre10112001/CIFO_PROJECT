@@ -4,6 +4,31 @@ In this project, we are solving an Asymmetric Capacitated Vehicle Routing Proble
 
 ***
 
+## Index
+
+1. [Problem Description](#problem-description)
+2. [Genetic Algorithms](#genetic-algorithms)
+3. [Representation](#representation)
+4. [Fitness](#fitness)
+5. [Genetic Algorithm Schema for Each Solution](#genetic-algorithm-schema-for-each-solution)
+    - [Solution 1](#solution-1)
+    - [Solution 2](#solution-2)
+    - [Solution 3](#solution-3)
+    - [Solution 4](#solution-4)
+6. [Selection Operators](#selection-operators)
+    - [fps (Fitness Proportionate)](#fps-fitness-proportionate)
+    - [ts (Tournament Selection)](#ts-tournament-selection)
+7. [Crossover Operators](#crossover-operators)
+    - [single_point_xo (Single Point Crossover)](#single_point_xo-single-point-crossover)
+    - [multi_point_xo (Multi Point Crossover)](#multi_point_xo-multi-point-crossover)
+    - [uniform_xo (Uniform Crossover)](#uniform_xo-uniform-crossover)
+8. [Mutation Operators](#mutation-operators)
+     - [swap_mutator](#swap_mutator)
+    - [scramble_mutator](#scramble_mutator)
+    - [random_reset_mutator](#random_reset_mutator)
+
+***
+
 ## Problem Description
 The Asymmetric Capacitated Vehicle Routing Problem (ACVRP) involves optimizing the routing of vehicles to deliver goods from a depot to various customers while minimizing costs or maximizing efficiency. Key constraints include vehicle capacity limits and asymmetrical travel costs between locations.
 
