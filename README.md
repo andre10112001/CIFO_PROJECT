@@ -123,8 +123,6 @@ The following gif demonstrates a cycle of single point crossover:
 ### multi_point_xo (Multi Point Crossover)
 Similar to the [single_point_xo](#single_point_xo-single-point-crossover) shown above, but instead of a single crossover point, we have "n" crossover points, where "n" is a user-defined parameter.
 
-### multi_point_xo (Multi Point Crossover)
-
 ### uniform_xo (Uniform Crossover)
 Uniform crossover in genetic algorithms selects genes randomly from either parent with equal probability (50% chance for each parent). This process helps maintain genetic diversity by introducing randomness into the offspring. It's akin to flipping a coin for each gene to determine its source parent, facilitating exploration of different potential solutions.
 
