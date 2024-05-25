@@ -126,7 +126,10 @@ Similar to the [single_point_xo](#single_point_xo-single-point-crossover) shown 
 ### multi_point_xo (Multi Point Crossover)
 
 ### uniform_xo (Uniform Crossover)
-TODO
+Uniform crossover in genetic algorithms selects genes randomly from either parent with equal probability (50% chance for each parent). This process helps maintain genetic diversity by introducing randomness into the offspring. It's akin to flipping a coin for each gene to determine its source parent, facilitating exploration of different potential solutions.
+
+The following gif demonstrates a cycle of uniform crossover:
+![single_point_xo Animation](Images/uniform.gif)
 
 ***
 
