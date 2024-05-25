@@ -1,5 +1,5 @@
 from Algorithms.selection import fps, ts
-from Algorithms.xo import single_point_xo, multi_point_xo, pmx
+from Algorithms.xo import single_point_xo, multi_point_xo, pmx, uniform_xo
 from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator
 from Algorithms.charles import Population, Individual
 from Data.data import dimension, np_edge_weight_section, np_demand_section, capacity
@@ -39,7 +39,7 @@ if __name__ == "__main__":
         'xo_prob': [0.9],
         'mut_prob': [0.15],
         'select': [fps, ts],
-        'xo': [single_point_xo],
+        'xo': [single_point_xo, uniform_xo, pmx, multi_point_xo],
         'mutate': [swap_mutator, scramble_mutator, random_reset_mutator],
         'n_runs': 30  # Add the number of runs
     }
@@ -59,7 +59,22 @@ if __name__ == "__main__":
         #print("Results", result["results"])
         print("Average Fitness:", result['average_fitness'])
 
+    # Extract the best solution from the result
+    best_result = min(grid.results, key=lambda x: x['average_fitness'])
 
+    # Extract representation from the best solution
+    best_solution = best_result['results'][0]
+    representation = best_solution[0]
+
+    # Calculate paths and loads from the representation
+    path_1, path_2, path_3 = see_paths(representation)
+    load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
+
+    # Print paths and loads for each vehicle in the best solution
+    print("Paths and Loads for Solution with Minimum Fitness:")
+    print("Path 1:", path_1, "Load:", load_1)
+    print("Path 2:", path_2, "Load:", load_2)
+    print("Path 3:", path_3, "Load:", load_3)
 
 
     # OLD VERSION
