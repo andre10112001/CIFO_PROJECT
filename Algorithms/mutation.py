@@ -1,4 +1,5 @@
 from random import randint, choice, shuffle, uniform
+import random
 
 
 def swap_mutator(individual, n_loops=1):
@@ -80,3 +81,20 @@ def random_reset_mutator(individual, n_loops=1):
         individual[index] = uniform(0, 2.999999)
 
     return individual
+
+def custom_mutator(individual, mutation_rate = 0.5):
+    num_customers = len(individual)
+    mutated_child = individual.copy()
+
+    # Iterate over each customer
+    for i in range(1, num_customers):
+        # Determine if this customer will be mutated
+        if random.uniform(0, 1) < mutation_rate:
+            # Mutation strategy: swap the value of index i with index i+1 (if i < num_customers)
+            if i < num_customers-1:
+                mutated_child[i], mutated_child[i + 1] = mutated_child[i + 1], mutated_child[i]
+            # Alternatively,
+            if i == num_customers:
+                 mutated_child[num_customers], mutated_child[1] = mutated_child[1], mutated_child[num_customers]
+
+    return mutated_child

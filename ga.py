@@ -1,6 +1,6 @@
 from Algorithms.selection import fps, ts
-from Algorithms.xo import single_point_xo, multi_point_xo, pmx, uniform_xo
-from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator
+from Algorithms.xo import single_point_xo, multi_point_xo, pmx, uniform_xo, arithmetic_xo, sbx
+from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator, custom_mutator
 from Algorithms.charles import Population, Individual
 from Data.data import dimension, np_edge_weight_section, np_demand_section, capacity
 from utils import get_load, get_path, see_paths, run_n_times, plot_evolution_history, plot_fitness_boxplots
@@ -39,8 +39,8 @@ if __name__ == "__main__":
         'xo_prob': [0.9],
         'mut_prob': [0.15],
         'select': [fps, ts],
-        'xo': [single_point_xo, uniform_xo, pmx, multi_point_xo],
-        'mutate': [swap_mutator, scramble_mutator, random_reset_mutator],
+        'xo': [single_point_xo, multi_point_xo, pmx, uniform_xo, arithmetic_xo, sbx],
+        'mutate': [swap_mutator, scramble_mutator, random_reset_mutator, custom_mutator],
         'n_runs': 30  # Add the number of runs
     }
 
