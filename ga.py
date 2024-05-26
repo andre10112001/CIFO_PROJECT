@@ -1,4 +1,4 @@
-from Algorithms.selection import fps, ts
+from Algorithms.selection import fps, ts, boltzmann_selection, rank_based_selection
 from Algorithms.xo import single_point_xo, multi_point_xo, pmx, uniform_xo, arithmetic_xo, sbx
 from Algorithms.mutation import swap_mutator, scramble_mutator, random_reset_mutator, custom_mutator
 from Algorithms.charles import Population, Individual
@@ -38,10 +38,10 @@ if __name__ == "__main__":
         'gens': [100],
         'xo_prob': [0.9],
         'mut_prob': [0.15],
-        'select': [fps, ts],
+        'select': [fps, ts, boltzmann_selection, rank_based_selection],
         'xo': [single_point_xo, multi_point_xo, pmx, uniform_xo, arithmetic_xo, sbx],
         'mutate': [swap_mutator, scramble_mutator, random_reset_mutator, custom_mutator],
-        'n_runs': 30  # Add the number of runs
+        'n_runs': 30 # Add the number of runs
     }
 
     # Instantiate GridSearch with the parameter grid and the external run_n_times function
@@ -53,14 +53,18 @@ if __name__ == "__main__":
     # Sort the combinations based on the average fitness
     grid.sort_results_by_fitness()
 
-    print()
-    for result in grid.results:
-        print("Params:", result['params'])
-        #print("Results", result["results"])
-        print("Average Fitness:", result['average_fitness'])
+    top_5_results = grid.results[-5:]
+    results_list = []
+    # Plot the history of the top 5 combinatinos
+    for result in top_5_results:
+        plot_evolution_history(result["results"])
+        results_list.append(result["results"])
+
+    # Plot the results for the top 5 combinations
+    plot_fitness_boxplots(*results_list)
 
     # Extract the best solution from the result
-    best_result = min(grid.results, key=lambda x: x['average_fitness'])
+    best_result = grid.results[-1]
 
     # Extract representation from the best solution
     best_solution = best_result['results'][0]
@@ -75,6 +79,7 @@ if __name__ == "__main__":
     print("Path 1:", path_1, "Load:", load_1)
     print("Path 2:", path_2, "Load:", load_2)
     print("Path 3:", path_3, "Load:", load_3)
+    print("Average Fitness:", best_result["average_fitness"])
 
 
     # OLD VERSION

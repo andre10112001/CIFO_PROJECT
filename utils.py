@@ -152,7 +152,6 @@ def plot_evolution_history(results):
     plt.xlabel('Generation')
     plt.ylabel('Best Fitness')
     plt.grid(True)
-    plt.legend()
     plt.show()
 
 def plot_fitness_boxplots(*results):
