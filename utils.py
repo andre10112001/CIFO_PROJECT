@@ -111,7 +111,7 @@ def run_n_times(pop_size, gens, xo_prob, mut_prob,
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_evolution_history(results):
+def plot_evolution_history(results, title):
     plt.figure(figsize=(10, 6))
     
     all_generations = []
@@ -148,7 +148,7 @@ def plot_evolution_history(results):
     # Plot the mean fitness line
     plt.plot(range(1, max_generations + 1), mean_fitness_values, label='Mean Fitness', color='red', linewidth=2)
 
-    plt.title('Evolution of Best Fitness Over Generations (Multiple Runs)')
+    plt.title('Evolution of Best Fitness Over Generations (Multiple Runs)' +  title)
     plt.xlabel('Generation')
     plt.ylabel('Best Fitness')
     plt.grid(True)

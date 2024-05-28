@@ -54,22 +54,51 @@ if __name__ == "__main__":
     grid.sort_results_by_fitness()
 
     top_5_results = grid.results[-5:]
+
     results_list = []
     # Plot the history of the top 5 combinatinos
+    i = 1
     for result in top_5_results:
-        plot_evolution_history(result["results"])
+        plot_evolution_history(result["results"], title=f"Solution {i}")
         results_list.append(result["results"])
+        i += 1
 
     # Plot the results for the top 5 combinations
     plot_fitness_boxplots(*results_list)
 
-    # Extract the best solution from the result
-    best_result = grid.results[-1]
+    # Print the soluctions and the corresponding parameters
+    i = 1
+    for combination in top_5_results:
+        print(f"Solution {i}: Parameters {combination['params']}, Average Fitness {combination['average_fitness']}")
+        i += 1
 
-    # Extract representation from the best solution
-    best_solution = best_result['results'][0]
-    representation = best_solution[0]
+    # Extract the best ever solution obtained by the top 5 combinations
+    min_fitness = 1_000_000 
+    for dict in top_5_results:
+        results = dict["results"]
+        for element in results:
+            best_representation = element[0]
+            best_fitness = element[1]
+            load_1 = element[2]
+            load_2 = element[3]
+            load_3 = element[4]
+            history = element[5]
+            if best_fitness < min_fitness:
+                min_fitness = best_fitness
+                best_result_ever = element
 
+    print(f"Best representation ever: {best_result_ever[0]}")
+    print(f"Best fitness ever: {best_result_ever[1]}")
+    print(f"Best load_1 ever: {best_result_ever[2]}")
+    print(f"Best load_2 ever: {best_result_ever[3]}")
+    print(f"Best load_3 ever: {best_result_ever[4]}")
+
+    path_1, path_2, path_3 = see_paths(best_result_ever[0])
+    print("Path 1:", path_1)
+    print("Path 2:", path_2)
+    print("Path 3:", path_3)
+
+    """
     # Calculate paths and loads from the representation
     path_1, path_2, path_3 = see_paths(representation)
     load_1, load_2, load_3 = get_load(path_1, path_2, path_3)
@@ -79,7 +108,7 @@ if __name__ == "__main__":
     print("Path 1:", path_1, "Load:", load_1)
     print("Path 2:", path_2, "Load:", load_2)
     print("Path 3:", path_3, "Load:", load_3)
-    print("Average Fitness:", best_result["average_fitness"])
+    print("Average Fitness:", best_result["average_fitness"])"""
 
 
     # OLD VERSION
